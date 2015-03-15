@@ -40,5 +40,6 @@ def main(sound_dir, sound_player, file_filter) :
     print("Good bye")
 
 if __name__ == "__main__" :
-    main(DIRECTORY, lambda x : print("playing %s" % x), lambda root, path : True)
+    import mac_sound
+    main(DIRECTORY, mac_sound.play, mac_sound.can_play)
 
