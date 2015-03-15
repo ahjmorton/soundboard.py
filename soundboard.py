@@ -1,7 +1,5 @@
 #!/opt/local/bin/python
 
-from __future__ import print_function
-
 import os
 from os import path
 
@@ -29,7 +27,7 @@ def main(sound_dir, sound_player, file_filter) :
         for i, sound in values :
             print("%i) %s" % (i, sound))
         print("'q(uit)' to quit")
-        choice = raw_input("Enter your choice: ").lower()
+        choice = input("Enter your choice: ").lower()
         if choice == "q" or choice == "quit" :
             done = True
         elif is_int(choice) and int(choice) in lookup :
