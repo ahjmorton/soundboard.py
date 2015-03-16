@@ -26,10 +26,15 @@ def main(sound_dir, sound_player, file_filter) :
     while not done :
         for i, sound in values :
             print("%i) %s" % (i, sound))
+        print("'r(eload)' to reload")
         print("'q(uit)' to quit")
         choice = input("Enter your choice: ").lower()
         if choice == "q" or choice == "quit" :
             done = True
+        elif choice == "r" or choice == "reload" :
+            print("Reloading files to play")
+            values = list(enumerate(read_in_sounds(sound_dir, file_filter)))
+            lookup = dict(values)
         elif is_int(choice) and int(choice) in lookup :
             file_to_play = lookup[int(choice)]
             sound_player(file_to_play)
