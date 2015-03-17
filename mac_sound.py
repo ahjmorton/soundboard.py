@@ -7,4 +7,4 @@ def play(file_name) :
     subprocess.Popen(["afplay", file_name]).wait()
 
 def can_play(root, filename) :
-    return True
+    return filename.endswith(".m4a") or filename.endswith("mp3")
